@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        .center {
+            margin: auto;
+            width: 50%;
+            border: 3px solid #73AD21;
+            padding: 10px;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        .button {
+            background-color: #4CAF50;
+            border: none;
+            color: white;
+            padding: 10px 20px 10px 20px;
+            margin-right: 10px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <div class="center">
+
+        <h1>Currency Converter</h1>
+        <form id="form">
+            Euro Amount:
+            <br>
+            <input type="number" id="myInput" name="amount">
+            <br>
+            <br>
+            Customer :
+            <br>
+            <input type="text" name="customer">
+            <br><br>
+            Currency :
+            <br>
+            <br>
+            <select id="list" style="width:135px;">
+                <option value="0.86">Pound</option>
+                <option value="1.11">Dollar</option>
+                <option value="173.65">Pkr</option>
+            </select>
+            <br>
+
+            <p id="output"></p>
+            <br><br>
+            <input class="button" type="button" onclick="showResult()" value="Convert">
+            <input class="button" type="button" onclick="resetFunction()" value="Reset">
+
+        </form>
+
+    </div>
+
+</body>
+<script>
+    function resetFunction() {
+        document.getElementById("form").reset();
+        document.getElementById("output").innerHTML = "";
+    }
+
+    function getSelectedValue() {
+        return document.getElementById("list").value;
+    }
+
+    function getInputValue() {
+        return document.getElementById("myInput").value;
+    }
+
+    function showResult() {
+        var result = getSelectedValue() * getInputValue()
+        document.getElementById("output").innerHTML = result;
+    }
+</script>
+
+</html>
